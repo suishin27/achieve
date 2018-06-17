@@ -1,0 +1,48 @@
+
+
+<%= form_with(model: @article, local: true ,url: choose_new_or_edit) do |form| %>
+  
+  <% if @article.errors.any? %>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div id="error_explantion">
+      <h2>投稿エラー</h2>
+      <ul>
+      
+      
+      <div class="alert alert-danger" role="alert">
+        <%= @article.errors.full_messages %>
+
+      </div>
+  <% end %>
+        
+        
+        
+      </ul>
+    </div>
+
+  <div class="artilce_content">
+    <center>
+    <h3>140文字以内で一言！</h3>
+
+    <div class="content">
+      <%= form.label :一言 %>
+      <%= form.text_field :content %>
+
+    </div>
+  <%= form.submit "投稿" ,:class=>"btn_submit" %>
+
+  </div>
+  </div>
+  <div class="col-md-4"></div>
+
+
+    </center>
+  </div>
+
+  
+<% end %>
+
+
+
+<center><%= link_to '投稿一覧画面にもどる', articles_path %></center>

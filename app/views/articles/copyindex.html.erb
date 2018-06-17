@@ -1,0 +1,29 @@
+
+
+<table>
+  <tr>
+    <th><h1>一言一覧</h1></th>
+    <p><%= notice %></p>
+  </tr>
+  
+  <% @articles.each do |article| %>
+  <tr>
+    <div class="btn-group" role="group" aria-label="btn">
+      <button type="button" class="btn btn-default"><%= link_to "一言を編集する", edit_article_path(article.id), data: { confirm: '本当に編集していいですか？' } %></button>
+      <button type="button" class="btn btn-default"><%= link_to '一言を削除する', article_path(article.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></button>
+    </div>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '一言を投稿する', new_article_path %>
+
+
+<div class="btn-group" role="group" aria-label="btn">
+  <button type="button" class="btn btn-default"><%= link_to "一言を編集する", edit_article_path(article.id), data: { confirm: '本当に編集していいですか？' } %></button>
+  <button type="button" class="btn btn-default"><%= link_to '一言を削除する', article_path(article.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></button>
+</div>
+
+
+
+

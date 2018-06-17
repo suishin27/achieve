@@ -1,0 +1,16 @@
+<center><h3>以下の内容で投稿する</h3>
+
+<%= form_with(model: @article, url: articles_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>一言:<%= @article.content %></p>
+  <%= form.submit  "投稿する" ,:class=>"btn_submit" %>
+<% end %>
+
+<%= form_with(model: @article, url: new_article_path, local: true, method: 'get') do |form| %>
+
+  <%= form.hidden_field :content %>
+  <%= form.submit "もどる" ,:class=>"btn_submit", name: 'back' %>
+<% end %>
+
+</center>

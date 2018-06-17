@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>一言！</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header>
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a href="#">Home</a></li>
+      <li role="presentation"><%= link_to '投稿一覧', articles_path %></li>
+      <li role="presentation"><%= link_to '一言を投稿する', new_article_path %></li>
+    </ul>    
+
+
+  </header>
+
+<%= yield %>
+
+  <footer>
+   <center><p>2018年1月期生　小野貴裕</p></center>
+  </footer>
+
+</body>
+</html>
