@@ -1,16 +1,22 @@
-<center><h3>以下の内容で投稿する</h3>
+<ul class="row">
+  <li class="col-md-4"></li>
+  <li class="col-xs-12 col-md-4">
+    <center><h3>以下の内容で投稿する</h3>
 
-<%= form_with(model: @article, url: articles_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
+    <%= form_with(model: @article, url: articles_path, local: true) do |form| %>
+    <%= form.hidden_field :content %>
 
-  <p>一言:<%= @article.content %></p>
-  <%= form.submit  "投稿する" ,:class=>"btn_submit" %>
-<% end %>
+    <p>一言:<%= @article.content %></p>
+    <%= form.submit  "投稿する" ,:class=>"btn_submit" %>
+    <% end %>
 
-<%= form_with(model: @article, url: new_article_path, local: true, method: 'get') do |form| %>
+    <%= form_with(model: @article, url: new_article_path, local: true, method: 'get') do |form| %>
 
-  <%= form.hidden_field :content %>
-  <%= form.submit "もどる" ,:class=>"btn_submit", name: 'back' %>
-<% end %>
+    <%= form.hidden_field :content %>
+    <%= form.submit "もどる" ,:class=>"btn_submit", name: 'back' %>
+    <% end %>
 
-</center>
+    </center>
+  </li>
+  <li class="col-md-4"></li>
+</ul>

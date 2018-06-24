@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'articles/top'
+  root to: 'articles#top'
+
   resources :articles do
     collection do
       post :confirm
