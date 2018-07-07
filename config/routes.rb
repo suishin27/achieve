@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'articles/top'
+  
   root to: 'articles#top'
-
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :show]
   resources :articles do
     collection do
       post :confirm

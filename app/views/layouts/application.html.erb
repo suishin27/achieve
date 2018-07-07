@@ -9,15 +9,28 @@
 <body>
   <div id="wrapper">
     <header>
+      
+
+    <% if logged_in? %>
       <ul class="nav nav-tabs">
-        <li role="presentation"><%= link_to 'TOP',  articles_top_path %></li>
+        <li role="presentation"><%= link_to 'TOP', root_path %></li>
         <li role="presentation"><%= link_to '投稿一覧', articles_path %></li>
         <li role="presentation"><%= link_to '一言を投稿する', new_article_path %></li>
+        <li align="right" role="presentation"><%= link_to 'プロフィール', user_path(current_user.id) %></li>
+        <li align="right" role="presentation"><%= link_to 'ログアウト', session_path(current_user.id), method: :delete %></li>
       </ul>    
-  
+
 
     </header>
-    
+
+    <% else %>
+
+    　<%= link_to "アカウントを作成する", new_user_path %>
+    　<%= link_to "ログイン", new_session_path %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+     <% end %>
+    <% end %>
 
     <%= yield %>
 
